@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
 header {
-  padding: 380px 0 200px;
+  padding: 280px 0 200px;
   background-image: url("../img/background_image.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -15,3 +15,9 @@ header {
 section {
   padding: 150px 0;
 }
+
+.title-text {
+  color: black;
+  text-align: center;
+}
+
