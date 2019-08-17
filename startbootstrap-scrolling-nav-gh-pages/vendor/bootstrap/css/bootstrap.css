@@ -16,7 +16,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
-  --gray: #6c757d;
+  --gray: #bdc0c2;
   --gray-dark: #343a40;
   --primary: #007bff;
   --secondary: #6c757d;
@@ -26,6 +26,7 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --ltblue: #87acd4;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -74,12 +75,13 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
+
 p {
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 1rem;
 }
 
