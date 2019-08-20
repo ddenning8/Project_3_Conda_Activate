@@ -1,5 +1,5 @@
 // from data.js
-var tableData = hdata;
+var tableData = data;
 var tbody = d3.select("tbody");
 
 // display data from data.js
@@ -34,12 +34,12 @@ function firstTable(alienSightings) {
        } else {
            // otherwise, display the filtered dataset on datetime 
            var newData = tableData.filter(alienSighting => 
-             alienSighting.Bedroom == inputValue)
+             alienSighting.country == inputValue)
            }
    
-      //  if (newData.length == 0) {
-      //      alert("There are no houses with this number of bedrooms!");
-      //  };
+       if (newData.length == 0) {
+           alert("Country not listed! Pick another!");
+       };
    
      console.log(newData);
      firstTable(newData);
