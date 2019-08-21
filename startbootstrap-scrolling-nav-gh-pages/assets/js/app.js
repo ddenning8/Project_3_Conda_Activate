@@ -54,7 +54,7 @@ function makeResponsive() {
             .range([0, width]);
   
         var yLinearScale = d3.scaleLinear()
-            .domain([d3.min(healthData, d => d.data), d3.max(healthData, d => d.data)])
+            .domain([d3.min(healthData, d => d.data), 4000])
             .range([height, 0]);
   
         // create axes
@@ -78,7 +78,31 @@ function makeResponsive() {
             .attr("cx", d => xLinearScale(d.testing))
             .attr("cy", d => yLinearScale(d.data))
             .attr("r", "10")
-            .attr("fill", "coral")
+            // .attr("fill", "coral")
+            .attr("fill", function(d) {
+              if (d.region == 0) {
+                return "#1f77b4";
+              } else if (d.region == 1) {
+                return "#7f7f7f";
+              } else if (d.region == 2) {
+                return "#2ca02c";
+              } else if (d.region == 3) {
+                return "#e377c2";
+              } else if (d.region == 4) {
+                return "#8c564b";
+              } else if (d.region == 5) {
+                return "#bcbd22";
+              } else if (d.region == 6) {
+                return "#ff7f0e";
+              } else if (d.region == 7) {
+                return "#17becf";
+              } else if (d.region == 8) {
+                return "#d62728";
+              } else if (d.region == 9) {
+                return "#9467bd";
+              }
+              return "black";
+            })
             .attr("stroke-width", "1")
             .attr("opacity", "1")
             .attr("stroke", "none");
@@ -121,7 +145,7 @@ function makeResponsive() {
             .attr("class", "tooltip")
             .offset([80, -60])
             .html(function(d) {
-                return `<strong>${d.country}</strong><br>Testing(%): ${d.testing}<br>Data Count: ${d.data}<br>`;
+                return `<strong>${d.Country}</strong><br>Testing(%): ${d.testing}<br>Data Count: ${d.data}<br>`;
             });
   
         // Step 2: Create the tooltip in chartGroup.
