@@ -1,0 +1,29 @@
+.node:hover{
+  stroke-width: 7px !important;
+  opacity: 1 !important;
+}
+
+.node {
+  stroke-width: 1px;
+  stroke: black;
+  opacity: .8
+}
+.node:hover {
+  stroke: black;
+}
+/* Mobile Rules */
+@media screen and (max-width: 530px) {
+  .stateText {
+    display: none;
+  }
+
+  .aText {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .aText {
+    font-size: 13px;
+  }
+}
