@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/d3Style.css">
 
+    <link rel="stylesheet" href="css/fre_style.css">
+    <link rel="stylesheet" href="css/fre_d3Style.css">
+    
+
     <script src="https://kit.fontawesome.com/4c872db09a.js"></script>
 
 
@@ -138,24 +142,26 @@
                         <p class="lead">The following figures show data from the United States green card applications from 2015 - 2018. Data is limited to applications that were either certified or denied during this timeframe.</p>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 style="text-align:center">Certified Cases by Country of Origin and Region</h4>
-                            <div id="D3_bubble_chart"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 style="text-align:center">Indians' Visa Applications by States</h4>
-                            <div id="D3_India_bubble_chart"></div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="text-align:center">Certified Cases by Country of Origin and Region</h4>
+                        <div id="D3_bubble_chart"></div>
+                </div>
+            </div>      
+                <div class="col-md-6">
+                    <h4 style="text-align:center">Indians' Visa Applications by States</h4>
+                        <div id="D3_India_bubble_chart"></div>
+                </div>
+            </div>
                     <div class="row">
                         <div class="col-md-6">
                             <h4 style="text-align:center">Indians' Visa Applications by Cities in California</h4>
                             <div id="my_dataviz"></div>
                         </div>
                     </div>
-                </div>
+        
             </div>
             <div class="container">
                 <div class="row">
@@ -191,7 +197,7 @@
                         <li>Employer Number of Employees</li>
                         <li>Yearly Wage Offer</li>
                         <li>Number of Days Til Decision</li>
-                        <li>World Region</li>
+                        <li>Employer State Region</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
@@ -199,11 +205,270 @@
                         <li>Applicant Education Level</li>
                         <li>Class of Admission (ex. H-1B)</li>
                         <li>Month of Application Case Received</li>
-                        <li>Employer State Region</li>
                     </ul>
                 </div>
                 <div class="col-md-12">
-                    <p class="lead">Future work in this area would be to incorporate a user input system that would allow people to gauge their application status by inputing their characteristics into the machine learning model.</p>
+                    <p class="lead">Future work in this area would be to incorporate a user input system that would allow people to gauge their application status by inputing their characteristics into the machine learning model. Below is an example of how a user from a specific country would input their information to get a prediction of likelihood of if their application would be certified or denied. (Note: days til decision would be an estimated parameter).</p>
+                </div>  
+
+                <br>
+
+
+                <div class="container">
+                    <div class="row"> 
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="sel1">Country of Citizenship:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Argentina</option>
+                                    <option>Armenia</option>
+                                    <option>Australia</option>
+                                    <option>Austria</option>
+                                    <option>Bangladesh</option>
+                                    <option>Belarus</option>
+                                    <option>Belgium</option>
+                                    <option>Bolivia</option>
+                                    <option>Brazil</option>
+                                    <option>Bulgaria</option>
+                                    <option>Canada</option>
+                                    <option>Chile</option>
+                                    <option>China</option>
+                                    <option>Colombia</option>
+                                    <option>Costa Rica</option>
+                                    <option>Czech Republic</option>
+                                    <option>Denmark</option>
+                                    <option>Dominican Republic</option>
+                                    <option>Ecuador</option>
+                                    <option>Egypt</option>
+                                    <option>El Salvador</option>
+                                    <option>Finland</option>
+                                    <option>France</option>
+                                    <option>Germany</option>
+                                    <option>Ghana</option>
+                                    <option>Greece</option>
+                                    <option>Guatemala</option>
+                                    <option>Haiti</option>
+                                    <option>Honduras</option>
+                                    <option>Hong Kong</option>
+                                    <option>Hungary</option>
+                                    <option>India</option>
+                                    <option>Indonesia</option>
+                                    <option>Iran</option>
+                                    <option>Ireland</option>
+                                    <option>Israel</option>
+                                    <option>Italy</option>
+                                    <option>Jamaica</option>
+                                    <option>Japan</option>
+                                    <option>Jordan</option>
+                                    <option>Kenya</option>
+                                    <option>Lebanon</option>
+                                    <option>Malaysia</option>
+                                    <option>Mexico</option>
+                                    <option>Moldova</option>
+                                    <option>Mongolia</option>
+                                    <option>Morocco</option>
+                                    <option>Nepal</option>
+                                    <option>Netherlands</option>
+                                    <option>New Zealand</option>
+                                    <option>Nigeria</option>
+                                    <option>Pakistan</option>
+                                    <option>Peru</option>
+                                    <option>Philippines</option>
+                                    <option>Poland</option>
+                                    <option>Portugal</option>
+                                    <option>Romania</option>
+                                    <option>Russia</option>
+                                    <option>Serbia</option>
+                                    <option>Singapore</option>
+                                    <option>South Africa</option>
+                                    <option>South Korea</option>
+                                    <option>Spain</option>
+                                    <option>Sri Lanka</option>
+                                    <option>Sweeden</option>
+                                    <option>Switzerland</option>
+                                    <option>Syria</option>
+                                    <option>Taiwan</option>
+                                    <option>Thailand</option>
+                                    <option>Trinidad and Tobago</option>
+                                    <option>Turkey</option>
+                                    <option>Ukraine</option>
+                                    <option>United Kingdom</option>
+                                    <option>Venezuela</option>
+                                    <option>Vietnam</option>
+                                    <option>Zimbabwe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Employer Size (num of employees):</label>
+                                <select class="form-control" id="sel1">
+                                  <option>0-50</option>
+                                  <option>51-100</option>
+                                  <option>101-500</option>
+                                  <option>501-1000</option>
+                                  <option>1001-10000</option>
+                                  <option>10000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Yearly Wage Offer ($):</label>
+                                <select class="form-control" id="sel1">
+                                  <option>0-25000</option>
+                                  <option>25001-50000</option>
+                                  <option>50001-75000</option>
+                                  <option>75001-100000</option>
+                                  <option>100001+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Days til Decision:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>0-90</option>
+                                    <option>91-180</option>
+                                    <option>181-365</option>
+                                    <option>366+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Education Level:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Bachelor's</option>
+                                    <option>Master's</option>
+                                    <option>None</option>
+                                    <option>Other</option>
+                                    <option>Doctorate</option>
+                                    <option>High School</option>
+                                    <option>Associate's</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Application Month Received:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Employer State Region:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>South</option>
+                                    <option>West</option>
+                                    <option>Northeast</option>
+                                    <option>Midwest</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sel1">Class of Admission:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>H-1B</option>
+                                    <option>L-1</option>
+                                    <option>F-1</option>
+                                    <option>Not in USA</option>
+                                    <option>TN</option>
+                                    <option>E-2</option>
+                                    <option>B-2</option>
+                                    <option>EWI</option>
+                                    <option>J-1</option>
+                                    <option>E-3</option>
+                                    <option>F-2</option>
+                                    <option>H-2B</option>
+                                    <option>O-1</option>
+                                    <option>H-4</option>
+                                    <option>B-1</option>
+                                    <option>Parolee</option>
+                                    <option>TPS</option>
+                                    <option>L-2</option>
+                                    <option>E-1</option>
+                                    <option>H-1B1</option>
+                                    <option>H-2A</option>
+                                    <option>P-1</option>
+                                    <option>A1/A2</option>
+                                    <option>J-2</option>
+                                    <option>R-1</option>
+                                    <option>G-4</option>
+                                    <option>I</option>
+                                    <option>VWT</option>
+                                    <option>H-3</option>
+                                    <option>P-3</option>
+                                    <option>G-5</option>
+                                    <option>M-1</option>
+                                    <option>C-1</option>
+                                    <option>O-2</option>
+                                    <option>H-1A</option>
+                                    <option>A-3</option>
+                                    <option>O-3</option>
+                                    <option>G-1</option>
+                                    <option>VWB</option>
+                                    <option>TD</option>
+                                    <option>C-3</option>
+                                    <option>R-2</option>
+                                    <option>P-4</option>
+                                    <option>V-2</option>
+                                    <option>D-1</option>
+                                    <option>M-2</option>
+                                    <option>Q</option>
+                                    <option>U-1</option>
+                                    <option>V-1</option>
+                                    <option>T-1</option>
+                                    <option>K-1</option>
+                                    <option>P-2</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+                    Predict Application Status!
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Application Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            CERTIFIED or DENIED would be here once the model was run with the input parameters.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <br></br>
                     <h5>Below are two tables that show the data count and the machine learning training and testing accuracies (%) for each of the coutries and regions.</h5>
                 </div>
             </div>
@@ -453,10 +718,6 @@
             </div>
             <!-- /.container -->
         </footer>
-        <!-- Fre Load CSS -->
-        <link rel="stylesheet" href="css/fre_style.css">
-        <link rel="stylesheet" href="css/fre_d3Style.css">
-
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.js"></script>
@@ -476,18 +737,14 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="static/data.js"></script>
         <script src="static/app.js"></script>
+        <script src="js/d3.js"></script>
+        <script src="js/indiaD3.js"></script>
+        
 
 
         <!-- Fre Load d3.js -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
-
-        <!-- Fre Load Javascript file -->
-        <script type="text/javascript" src="js/d3.js"></script>
-
-        <!-- Vibs JS file -->
-        <script type="text/javascript" src="js/indiaD3.js"></script>
-
 
         <!-- Fre Color palette -->
         <script src="https://d3js.org/d3-color.v1.min.js"></script>
