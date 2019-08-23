@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>U.S. Green Card Acceptance Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" class="col-md-4">
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <select id="Regions" class="form-control">
+                        <option value="0.0">Africa</option>
+                        <option value="1.0">Asia</option>
+                        <option value="2.0">Central America</option>
+                        <option value="3.0">Eastern Europe</option>
+                        <option value="4.0">European Union</option>
+                        <option value="5.0">Middle East</option>
+                        <option value="6.0">North America</option>
+                        <option value="7.0">Oceania</option>
+                        <option value="8.0">South America</option>
+                        <option value="9.0">The Caribbean</option>
+                    </select>
+                    <button title="Predict applicant's chances" onclick="predict()" class="form-control">Go!</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            Result:&nbsp;<span id="Result"></span>
+        </div>
+    </div>
+
+    <script src="../static/js/greencard.js"></script>
+</body>
+
+</html>
