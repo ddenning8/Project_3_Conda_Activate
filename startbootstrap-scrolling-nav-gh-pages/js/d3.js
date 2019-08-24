@@ -14,7 +14,7 @@ var svg = d3.select("#D3_bubble_chart")
 
     
 // Read data
-d3.csv("../Resources/certified_byregion_country.csv").then (function(data) {
+d3.csv("Resources/certified_byregion_country.csv").then (function(data) {
   // console.log("reading csv file");
   for (var i = 0; i < data.length; i++) {
     var d = data[i];
@@ -38,10 +38,11 @@ var size = d3.scaleLinear()
  .attr("class", "tooltip")
  .style("background-color", "black")
  .style("border", "solid")
- .style("border-width", "2px")
- .style("border-radius", "5px")
- .style("padding", "5px")
- .style("color", "white");
+ .style("border-width", "5px")
+ .style("border-radius", "2px")
+ .style("padding", "10px")
+ .style("color", "white")
+ .style("display", "inline");
 
  // Three function that change the tooltip when user hover / move / leave a cell
  var mouseover = function(d) {
@@ -51,7 +52,7 @@ var size = d3.scaleLinear()
 var mousemove = function(d) {
   Tooltip
     .html("<u> Country of Citizenship: " + d.COUNTRY_OF_CITIZENSHIP + "</u>" + "<br>" + "<u> Name of Region: " + d.Region_Name + "</u>" +
-    "<br>" + "<u> Number of Certified Cases: " + d.NUM_OF_CERTIFIED_CASES)
+    "<br>" + "<u> Number of Certified Cases: " + d.NUM_OF_CERTIFIED_CASES + "</u>")
     .style("left", (d3.mouse(this)[0]+20) + "px")
     .style("top", (d3.mouse(this)[1]) + "px");
 }
@@ -146,7 +147,7 @@ svg.selectAll("mylabels")
   .enter()
   .append("text")
     .attr("x", 350 + size*.8)
-    .attr("y", function(d,i){ return 120 + i*(size + 5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("y", function(d,i){ return 120 + i*(size + 5) + (size/2)}) 
     .style("fill", function(d){ return color(d)})
     .text(function(d){ return d})
     .attr("text-anchor", "left")
@@ -157,7 +158,7 @@ svg.selectAll("mylabels")
 // Legend title
 svg.append("text")
 .attr('x', 350 + size)
-.attr("y", height - 395)
+.attr("y", height - 410)
 .text("Regions")
 .attr("text-anchor", "middle")
 .style("font-weight", "bold")

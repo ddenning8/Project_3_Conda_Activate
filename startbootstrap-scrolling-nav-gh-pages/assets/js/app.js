@@ -38,7 +38,7 @@ function makeResponsive() {
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
     // Read CSV
-    d3.csv("assets/data/data.csv")
+    d3.csv("startbootstrap-scrolling-nav-gh-pages/assets/data/data.csv")
       .then(function(healthData) {
   
   
