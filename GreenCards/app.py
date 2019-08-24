@@ -26,7 +26,7 @@ def load_environment():
 
 @app.route("/",methods=['GET'])
 def home():
-    return render_template("index.html")
+    return render_template("../index.html")
 
 @app.route("/predict/<region>", methods=["GET"])
 def predict(region):
